@@ -1,4 +1,4 @@
-//copyright
+//copyright Roldán Martínez Moncada UCR
 
 #include <stdio.h> //biblioteca estándar de C
 #include <stdbool.h>

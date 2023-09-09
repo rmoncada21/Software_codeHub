@@ -20,7 +20,7 @@ int main(void){
             &character
         */
 
-        printf("%c", character) 
+        printf("%c", character);
     }
 
 
