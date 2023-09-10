@@ -1,4 +1,4 @@
-#ifndef PERMUTATIONS_H
+#ifndef PERMUTATIONS_H   //compilación condicional
 #define PERMUTATIONS_H
 
 #include "combinatorics.h"
