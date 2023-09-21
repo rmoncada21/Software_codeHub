@@ -21,7 +21,7 @@ int main(void) {
   size_t value_count = 0;
   if (scanf("%zu", &value_count) == 1) {
     // Read values as an array of value count of real numbers
-    double* values = (double*) malloc(value_count * sizeof(double));
+    double* values = (double*) malloc(value_count * sizeof(double)); // crear un vector tipo double
     if (values) {
       error = read_values(value_count, values);
       if (error == ERROR_SUCCESS) {
@@ -34,7 +34,7 @@ int main(void) {
       } else {
         fprintf(stderr, "median: error: could not read values\n");
       }
-      free(values);
+      free(values); // Libera le memoria
     } else {
       fprintf(stderr, "median: error: could not allocate values\n");
       error = ERROR_NO_ENOUGH_MEMORY;
