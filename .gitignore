@@ -7,4 +7,6 @@
 *.obj
 *.elf
 
-estructuras
+#estructuras
+*.gcc
+*.cc
