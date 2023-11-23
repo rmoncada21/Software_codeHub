@@ -25,12 +25,12 @@ int resta(int a, int b) {
 int main() {
 
     forma_type nueva_struct;
-    
+
     Operacion operador;
 
     operador = suma;
     printf("Suma: %d\n", operador(5, 3));
-
+ 
     operador = resta;
     printf("Resta: %d\n", operador(5, 3));
 
