@@ -3,5 +3,6 @@
 '*.ii'
 
 *.o
-*.out
-*.ii
+*.ko
+*.obj
+*.elf
