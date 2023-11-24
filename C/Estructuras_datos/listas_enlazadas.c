@@ -31,6 +31,7 @@ struct Nodo* crearNodo(int dato){
 }
 
 // Funcion para insertar un nodo al inicio
+
 /*  struct Nodo** cabeza: Recibe un puntero a un puntero a struct Nodo. 
     Esto permite modificar la dirección del puntero cabeza original si 
     se inserta un nuevo nodo al inicio.
@@ -38,7 +39,9 @@ struct Nodo* crearNodo(int dato){
     *cabeza: Accede al puntero original que apunta al inicio de la lista.
 
     *cabeza = nuevoNodo;: Asigna la dirección del nuevo nodo al puntero 
-    original, actualizando así la cabeza de la lista.*/
+    original, actualizando así la cabeza de la lista.
+*/
+
 void insertarAlInicio(struct Nodo** nodo_cabeza, int dato){
     struct Nodo* nuevoNodo;
     nuevoNodo = crearNodo(dato);
