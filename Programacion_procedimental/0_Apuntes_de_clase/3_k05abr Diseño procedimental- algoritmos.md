@@ -2,7 +2,7 @@
 
 
 ***
-### Diseño procedimental: algoritmos. Diagramas de flujo. Pseudocódigo
+## Diseño procedimental: algoritmos. Diagramas de flujo. Pseudocódigo
 El procedimental es ccomo trbaja la maquina
 Antes de programar se debe realizar un diseño.  
 Los algoritmos se pueden representar en dos maneras
@@ -22,21 +22,21 @@ Los 8 tipos de intrucciones para escribrir un algoritmo en el paradigma
 8. Definir una subtarea
 
 ***
-### Algoritmo para el índice de masa corporal. Abstracción. Prueba de corrección y completitud
+## "Algoritmo para el índice de masa corporal. Abstracción. Prueba de corrección y completitud
 Los verbos podrían ser los nombres de las subrutinas
 
 ***
-### Descomposición en subtareas. Subrutinas con múltiples puntos de retorno
+## Descomposición en subtareas. Subrutinas con múltiples puntos de retorno
 Todo lo que empieza con dos puntos  en pseudocódigo son subrutinas
 
 ***
-### Prueba del algoritmo: rastreo de procesamiento, memoria, y comunicación
+## Prueba del algoritmo: rastreo de procesamiento, memoria, y comunicación
 Recorrer el algoritmo linea a linea, e ir rastreando el proceso.
 Usar varios casos de prueba
 
 
 ***
-### Convertir pseudocódigo en comentarios. Expresiones regulares
+## Convertir pseudocódigo en comentarios. Expresiones regulares
 - Diseño - Implementación - Análisis
 - Convertir psuedocodigo en comentarios
 - Usar Expresiones regulares:
@@ -46,7 +46,7 @@ Usar varios casos de prueba
 - Buscar sobre regex101 en google, es una herramienta sobre expresiones regualres 
 
 ***
-### Implementación del algoritmo en C. Reglas de estilo. Preferir constantes a variables.
+## Implementación del algoritmo en C. Reglas de estilo. Preferir constantes a variables.
 - Preferir constantes a variables
 - Todos los identificadores en minuscula exepto constante 
 - No usar de ser posible, datos de tipos float si no de tipo double
@@ -55,5 +55,5 @@ Usar varios casos de prueba
 - char* y char[] son lo mas parecido a strings en C
 
 ***
-### Errores de implementación y de diseño
+## Errores de implementación y de diseño
 Hacer primero el pseudocódigo y luego programar
