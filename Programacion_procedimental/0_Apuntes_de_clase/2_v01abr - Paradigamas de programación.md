@@ -1,11 +1,11 @@
 # Filosofía de la computación, matemática, ciencia e ingeniería
 Es la computación, es una ciencia, ing, o matemática?
 
-#### Ejercicios vs problemas
+## Ejercicios vs problemas
    
-#### Métodos de resolución de problemas: prueba y error, descomposición, analogía
+## Métodos de resolución de problemas: prueba y error, descomposición, analogía
 
-#### Proceso de resolución de problemas: análisis, diseño, implementación, pruebas
+## Proceso de resolución de problemas: análisis, diseño, implementación, pruebas
 
 1. Entender el peoblema
 2. Idear un plan 
@@ -17,9 +17,9 @@ Proceso de resolución
 2. Diseño
 3. Implementación 
 
-#### Recursos de la máquina: procesamiento, almacenamiento, y comunicación
+## Recursos de la máquina: procesamiento, almacenamiento, y comunicación
 
-#### Paradigmas de programación
+## Paradigmas de programación
 1. Funcional
 2. Procedimental
 3. Orientada a objetos - Vista en Progra_1

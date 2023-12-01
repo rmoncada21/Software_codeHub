@@ -1,6 +1,6 @@
 # Taller Doxygen y Makefile
 
-***
+
 ## Parte 1: Doxygen
 1. #### Propósito de la documentación. Ejemplo: documentación de Qt
 Documentar los códigos de las bibliotecas. Revisar la carpeta de combinatorias de programacion procedimental.
@@ -47,7 +47,7 @@ Recursivo = Yes
 NO agregar la carpeta doc al git 
 
 
-***
+
 ## Parte 2: Makefile
 
 1. #### Comandos para compilar la biblioteca y el programa en un shell script

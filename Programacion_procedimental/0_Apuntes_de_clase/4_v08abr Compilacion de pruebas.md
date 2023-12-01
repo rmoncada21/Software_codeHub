@@ -1,21 +1,21 @@
 # Compilación y pruebas (build automation)
 
-#### Probar el algoritmo/código mediante rastreo
-#### Aridad, precedencia, y asociatividad de los operadores
+## Probar el algoritmo/código mediante rastreo
+## Aridad, precedencia, y asociatividad de los operadores
 Se ejecuta primero la aridad: dice cuantos parametros recibe la funcion
 Precedencia: jerarquia de ejecución de operadores
 
-#### Corregir error de análisis y diseño en el algoritmo
+## Corregir error de análisis y diseño en el algoritmo
 
-#### Corregir el error en código. Variables lo más locales posibles
+## Corregir el error en código. Variables lo más locales posibles
 
-#### Preparar archivos para el ambiente local: código fuente
+## Preparar archivos para el ambiente local: código fuente
 Corregir problemas de formatos
 
-#### Compilar en línea de comandos. Ejecución interactiva
+## Compilar en línea de comandos. Ejecución interactiva
 - Ver archivo comandos_compilación.c
 
-#### Redirigir la entrada, salida, y error estándar
+## Redirigir la entrada, salida, y error estándar
 Hacer carpeta test para poner archivos de textos 
 
 >./archivo_ejecutable < tests/nombre_archivo_input.txt > tests/nombre_archivo_output.txt 2> tests/nombre_archivo_error.txt
@@ -27,7 +27,7 @@ Hacer carpeta test para poner archivos de textos
 - el comadno **2>** redireje el error estandar
 
 
-#### Comparar la salida del programa con la esperada usando icdiff
+## Comparar la salida del programa con la esperada usando icdiff
 > ./archivo_ejecutable < tests/nombre_archivo_input.txt | diff | programa | programa 2
 > 
 - compara la salida del programa con la entrada almacenada en el archivo de la carpeta tests 
@@ -45,14 +45,14 @@ Hacer carpeta test para poner archivos de textos
 
 - **icdff --no-headears** para no poner encabezados de los archivos
 
-#### Campos en la salida con formato (printf)
-#### Makefile. Sintaxis. Regla para compilar
+## Campos en la salida con formato (printf)
+## Makefile. Sintaxis. Regla para compilar
 Basado en el lenaguje perl
 
 guardar el comando de compilación
 
 
-#### Makefile: Reglas para pruebas de software y limpieza
+## Makefile: Reglas para pruebas de software y limpieza
 ~~~
 #target: requesites/dependicies
 #comand to build target
@@ -68,8 +68,8 @@ test: ejecutable
   rm -rf nombre_archivos
 ~~~
 
-#### Un Makefile genérico para proyectos en C/C++
+## Un Makefile genérico para proyectos en C/C++
 Ver Makefile generico brindado por el profe
 
-#### Makefile genérico: instalar dependencias. Linter de C/C++ (reglas de estilo)
+## Makefile genérico: instalar dependencias. Linter de C/C++ (reglas de estilo)
   

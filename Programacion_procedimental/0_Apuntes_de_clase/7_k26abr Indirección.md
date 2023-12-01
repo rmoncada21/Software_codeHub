@@ -1,6 +1,6 @@
 # Análisis del problema del rango 1h 07min
-***
-#### Cargado del programa. Segmentos de memoria. Segmento de código (texto)
+
+## Cargado del programa. Segmentos de memoria. Segmento de código (texto)
 Rastreo de memoria
 Estudio del programa en tiempo de ejecuación
 Hay cuatro secciones de memoria:
@@ -9,10 +9,10 @@ Hay cuatro secciones de memoria:
 3. Segemento de memoria dinamica HEAP
 4. Segmento de pila STACK: alojar las invoccaciones de las subrutinas. Se crea una pila por cada hilo de ejecución
 
-***
-#### Segmento de datos. Variables globales y estáticas
-#### Segmento de heap (memoria dinámica). Hilo de ejecución
-#### Invocación de subrutinas. Parámetros vs argumentos
+
+## Segmento de datos. Variables globales y estáticas
+## Segmento de heap (memoria dinámica). Hilo de ejecución
+## Invocación de subrutinas. Parámetros vs argumentos
 https://jeisson.ecci.ucr.ac.cr/progra2/2022a/lecciones/0426-indirection/subroutine_call-parameters_vs_arguments.mp4
 
 Los argumentos y los parametros son distintos
@@ -22,10 +22,10 @@ swap(int parametro1, int parametro2)
 
 >**NOTA: No usar variables Globales**
 
-***
-#### Llamado por copia (copia de los argumentos)
-***
-#### Variables vs punteros. Metáfora de puntero
+
+## Llamado por copia (copia de los argumentos)
+
+## Variables vs punteros. Metáfora de puntero
 https://jeisson.ecci.ucr.ac.cr/progra2/2022a/lecciones/0426-indirection/variables_vs_pointers-pointer_metaphors.mp4
 
 - Variables: nombres de la variable. tamaño, dirección de memoria
@@ -44,8 +44,8 @@ tipo_de_datos* puntero = &variable;
 *puntero; desreferenciar
 ~~~
 
-***
-####  "Desreferenciar" un puntero (obtener el valor apuntado)
+
+##  "Desreferenciar" un puntero (obtener el valor apuntado)
 https://jeisson.ecci.ucr.ac.cr/progra2/2022a/lecciones/0426-indirection/pointer_desreferencing.mp4
 
 ~~~
@@ -66,35 +66,35 @@ int* puntero = (double*)&var; obliga al compilador a interpretr un valor de doub
 Hacer diagramas ayuda a entender mejor las variables punteros y debugs
 ~~~
 
-***
-#### Corregir con punteros la implementación del problema del rango
 
-***
-#### Rastreo de memoria de la implementación con punteros
+## Corregir con punteros la implementación del problema del rango
+
+
+## Rastreo de memoria de la implementación con punteros
 https://jeisson.ecci.ucr.ac.cr/progra2/2022a/lecciones/0426-indirection/tracing_memory_of_solution_with_pointers.mp4
 
 Para meterse en la memoria de las variables de otras subrutinas se usan punteros 
 
 
-***
-#### Enteros sin signo del tamaño de la arquitectura (size_t). Arreglos de tamaño fijo de alojamiento automático
+
+## Enteros sin signo del tamaño de la arquitectura (size_t). Arreglos de tamaño fijo de alojamiento automático
 
 > size_t es un tamaño de variable cambiante
  // se usa z cuando se usa size_t 
 
 
-***
-#### Arreglos de alojamiento estático. Argumentos de línea de comando. Arreglos de longitud variable
+
+## Arreglos de alojamiento estático. Argumentos de línea de comando. Arreglos de longitud variable
 
 Todas las variables static, el compilador las trata como variables globales 
 
-***
-#### Vulnerabilidad por desborde de pila
+
+## Vulnerabilidad por desborde de pila
 Segmentation fault: error de seguridad, vulnerabilidad
 
 
-***
-#### Arreglo de alojamiento dinámico (en segmento de heap)
+
+## Arreglo de alojamiento dinámico (en segmento de heap)
 Los arreglos de longitud variable deben estar en la memoria dinamica
 En c existen 3 surbrutinas que estan en la bibliotec #include <stdlib.h>
 - malloc
