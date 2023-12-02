@@ -16,3 +16,5 @@ git_add_command="git add $filtered_lines"
 #echo "$git_add_command"
 
 status_output=$($git_add_command)
+
+# prueba to gs
