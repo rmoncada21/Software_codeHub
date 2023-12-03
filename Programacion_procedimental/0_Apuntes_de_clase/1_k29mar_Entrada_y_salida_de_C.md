@@ -22,7 +22,7 @@ int scanf (const char* format)
             de memoria de la variable mediante:
             &character
 
-![Imagen 1](1_k29.png)
+![Imagen 1](img/1_k29.png)
 
 ## Archivos. Entrada estándar. Cursores
 

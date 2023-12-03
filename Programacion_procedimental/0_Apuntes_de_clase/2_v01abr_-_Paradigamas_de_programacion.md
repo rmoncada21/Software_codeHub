@@ -34,5 +34,5 @@ Proceso de resolución
 
 ------- value - record ----- function ----- recursion  
 
-![Imagen ](2_v01abr_Paradigmas.png)
+![Imagen ](img/2_v01abr_Paradigmas.png)
 
