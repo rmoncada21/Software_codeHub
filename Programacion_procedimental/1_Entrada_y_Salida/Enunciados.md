@@ -1,3 +1,5 @@
+# Enunciados de ejercicios
+
 1: Replicador de la entrada estándar 
 Se requiere un programa que replica la entrada estándar en la salida estándar. 
 Es decir el programa lee carácteres de la entrada estándar y los imprime en la
