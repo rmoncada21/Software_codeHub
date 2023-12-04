@@ -1,47 +1,48 @@
 # Análisis del problema de la mediana
 
-## Diseño de la solución en pseudocódigo
+## 1. Diseño de la solución en pseudocódigo
+Pseudocódigo:
 ~~~
-  procedure main:
-  Read value count 
-  Read values as a array of value conu of real numbers
-  Sort values
-  Creat meddias as the result of calculte the median of values
-  Print median 
   
-function calculate the median of values
-  if value  count is odd the 
-    return value at the ecnter of values
-  else
-    return the value 
+  procedure main:
+    Read value count 
+    Read values as a array of value conu of real numbers
+    Sort values
+    Creat meddias as the result of calculte the median of values
+    Print median 
+  
+  function calculate the median of values
+    if value  count is odd the 
+      return value at the ecnter of values
+    else
+      return the value 
+
 ~~~
 
-
-## Tipo de datos size_t. Programación defensiva
+## 2. Tipo de datos size_t. Programación defensiva
 - size_t se define dentro del enxabezado #include **<stdio.h>**
 
--Programación defensiva:
+- Programación defensiva:
 >enum error_t error = ERROR_SUCCESS;
 
-archivo para reportar erros se usa fprintf(stderr, "menssaje de error")
+- Crear archivo para reportar erros se usa fprintf(stderr, "menssaje de error")
 mensaje de error = median:error: no se puede leer el valor
 
-**enum** define un nuevo tipo de datos
+- **enum** define un nuevo tipo de datos
 
 
-C enumera los valores automaticamente
+- C enumera los valores automaticamente
 **Exit succes tiene un valor de cero**, se agrega con la libreria de **stdlib.h**
 
+## 3. Manejo de errores en C. Constantes en C. Enumeraciones
 
-## Manejo de errores en C. Constantes en C. Enumeraciones
+## 4. Error: retornar dirección de una variable
 
-## Error: retornar dirección de una variable
-
-**No se puede** devolver un vector como retorno de una funcion pero se puede retornar la primera dirección de memoria del vector. Tener cuiddo ya que se puede enviar la dirección de memoria de algo que se va destruir
+- **No se puede devolver un vector** como retorno de una funcion pero se puede retornar la primera dirección de memoria del vector. Tener cuiddo ya que se puede enviar la dirección de memoria de algo que se va destruir
 
 
-## Tipos de asignación de memoria: código, estática, automática, y dinámica. Inicialización de arreglos
-https://jeisson.ecci.ucr.ac.cr/progra2/material/#arrays
+## 5. Tipos de asignación de memoria: código, estática, automática, y dinámica. Inicialización de arreglos
+Ver link: https://jeisson.ecci.ucr.ac.cr/progra2/material/#arrays
 ver sección de 1.5.2 Arreglos vectores
 
 - Hacer un vector constante hace que el compilador lo ponga en el segmento de código 
@@ -56,68 +57,73 @@ la subrutina. Usarlas con cuidado
 
 
 
-## Pasar arreglos por parámetro
+## 6. Pasar arreglos por parámetro
 
 ~~~
-void read_values(const size_t value_count, double values[values_count]){
-  for (size_t index = 0; index < value_count; ++index)
-    if (scanf("%lg, &values[index]")=!1)
-      return ERROR_READ_VALUES
+  
+  void read_values(const size_t value_count, double values[values_count]){
+    for (size_t index = 0; index < value_count; ++index)
+      if (scanf("%lg, &values[index]")=!1)
+        return ERROR_READ_VALUES
 }
 ~~~
 
 
-## C pasa y retorna los arreglos como punteros, nunca por copia. size_of de un arreglo.
-No se puede retornar ni recibir multiples valores
+## 7. C pasa y retorna los arreglos como punteros, nunca por copia. size_of de un arreglo.
+- No se puede retornar ni recibir multiples valores
 Por 
 
 
-## Indexación de arreglos a través de punteros
+## 8. Indexación de arreglos a través de punteros
 - Un puntero siempre tiene el tamaño de la arquitectura
 - puntero[1]: posición uno del puntero. 
 
 
-## Aritmética de punteros.
-Puntero son enteros sin signo
+## 9. Aritmética de punteros.
+- Puntero son enteros sin signo
 >double* pointer = arr; 
-
 >pointer + 1 == 108
 100     + 1*sizeof(double)
 100     + 8
 108
 
-Ambas expresiones hacen lo mismo
-&values[index] usar la siguiente expresion values + index
+- Ambas expresiones hacen lo mismo
+~~~
+  
+  &values[index] usar la siguiente expresion values + index
 
-arr[2] == 90.0       *(pointer + 2) == 90.0
+  arr[2] == 90.0       *(pointer + 2) == 90.0
 
-## Desreferenciar con aritmética de punteros. Cambiarle la dirección al puntero
+~~~
 
-arr[0] == 95.0       *(pointer + 0) == 95.0    *pointer == 95.0
+## 10. Desreferenciar con aritmética de punteros. Cambiarle la dirección al puntero
+~~~
+    
+    arr[0] == 95.0       *(pointer + 0) == 95.0    *pointer == 95.0
 
+    // Esto se usa mas en variables tipos char
+    pointer = pointer + 1 ; le asigna la direccción de memoria de la direccion 
+    pointer+= 1
+    ++pointer
+    pointer++
+~~~
 
-Esto se usa mas en variables tipos char
-pointer = pointer + 1 ; le asigna la direccción de memoria de la direccion 
-pointer+= 1
-++pointer
-pointer++
+- EL compilador tiene una herramiento de optimizacion 
 
-EL compilador tiene una herramiento de optimizacion 
-## Ordenar un arreglo. Punteros void*. Punteros a funciones (subrutinas)
+## 11. Ordenar un arreglo. Punteros void*. Punteros a funciones (subrutinas)
 
-funcion qsort:
+- funcion qsort:
 >qsort(void* base, size_t num, size_t size, int (*compar), const void*, const void*)
 
-void* es un puntero
+- void* es un puntero
+
+- (const double*)p1 : apunta a un double asterisco (se le conoce como cast) 
 
 
-(const double*)p1 : apunta a un double asterisco (se le conoce como cast) 
+## 12. Terminar la implementación de la mediana y ejecución de la values es un vector
 
 
-## Terminar la implementación de la mediana y ejecución de la values es un vector
-
-
-## Datos apuntados constantes (sólo lectura). Direcciones constantes
+## 13. Datos apuntados constantes (sólo lectura). Direcciones constantes
 >double* values
 si la subrutina recibe double* values quiere decir que la subrutina va cambiar los 
 valores del vector
@@ -125,5 +131,6 @@ valores del vector
 >const double* const values
 
 
-## Preguntas: Matrices. Arreglos terminados en nulo. Concuso de código ofuscado en C
-Las matrices son punteros  punteros
+## 14. Preguntas: Matrices. Arreglos terminados en nulo. Concuso de código ofuscado en C
+
+- Las matrices son punteros  punteros

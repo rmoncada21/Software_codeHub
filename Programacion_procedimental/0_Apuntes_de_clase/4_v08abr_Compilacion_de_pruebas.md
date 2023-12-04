@@ -3,7 +3,7 @@
 
 ## Probar el algoritmo/código mediante rastreo
 ## Aridad, precedencia, y asociatividad de los operadores
-Se ejecuta primero la aridad: dice cuantos parametros recibe la funcion
+- Se ejecuta primero la aridad: dice cuantos parametros recibe la funcion
 Precedencia: jerarquia de ejecución de operadores
 
 ## Corregir error de análisis y diseño en el algoritmo
