@@ -1,8 +1,0 @@
-APPNAME=
-COMPILER=g++
-FLAGS=-Wall -Wextra
-
-all: $(APPNAME)
-
-$(APPNAME): $(APPNAME).cpp
-		$(COMPILER) $(FLAGS) $(APPNAME).cpp -o $(APPNAME)
