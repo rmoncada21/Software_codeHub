@@ -8,7 +8,7 @@
 *.elf
 
 test.*
-
+*.pdf
 #estructuras
 *.gcc
 *.cc
