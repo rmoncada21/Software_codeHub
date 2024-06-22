@@ -12,4 +12,6 @@ test.*
 #estructuras
 *.gcc
 *.cc
+bin/
+*.sh
 .vscode/
