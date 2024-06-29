@@ -1,4 +1,6 @@
 // Arreglos a partir de estructuras usando malloc
+// arreglo=&arreglo[0]
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "struct.h"
