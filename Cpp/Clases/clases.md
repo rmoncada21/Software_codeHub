@@ -22,7 +22,8 @@ Sección de implementación de las funiones
 */
 ~~~
 
-Uso de las palabras claves **private** y **public**:
+Uso de las palabras claves **private** y **public**: 
+
 - **private:** solo se pueden tener acceso a los miembros de la clase puestos en privado por medio de las funciones de clase o por funciones amigas.
 
 - **public:** se puede acceder desde cualquier lugar. Las funciones de las clase, deben de ser públicas.
@@ -105,8 +106,7 @@ Formas de llamar a un constructor a la hora de crear objetos
 
 > Fecha hoy = Fecha(30, 6, 2004)
 
-`**Nota**`: Sin importar cuál forma de inicialización se use, **en ningún caso deberá declararse un objeto con paréntesis vacíos**. Por ejemplo, **la declaración Fecha a()**; no es la misma que la
-declaración **Fecha a**;. La última declaración usa los valores del constructor por omisión mientras la primera declaración da como resultado que ningún objeto se cree.
+`**Nota**`: Sin importar cuál forma de inicialización se use, **en ningún caso deberá declararse un objeto con paréntesis vacíos**. Por ejemplo, **la declaración Fecha a()**; no es la misma que la declaración **Fecha a**;. La última declaración usa los valores del constructor por omisión mientras la primera declaración da como resultado que ningún objeto se cree.
 
 ### 4. Constructores sobrecargados y en linea
 
@@ -181,8 +181,11 @@ El operador `=` en C++ se utiliza para asignar los valores de un objeto a otro o
 Beneficios de Sobrecargar `operator=`:
 
 - **Gestión Correcta de Recursos**: Asegura que los recursos dinámicos se copien y liberen correctamente.
+
 - **Evita Autoasignación**: Protege contra problemas que pueden surgir si un objeto se asigna a sí mismo.
+
 - **Permite Encadenamiento**: Facilita el encadenamiento de múltiples asignaciones.
+
 - **Personalización del Comportamiento**: Permite definir un comportamiento específico para la operación de asignación según las necesidades de la clase.
 
 En resumen, la sobrecarga del operador de asignación `=` es una herramienta poderosa en C++ que permite un control preciso sobre cómo se copian los objetos, especialmente cuando se manejan recursos dinámicos.
@@ -233,7 +236,7 @@ Fecha::Fecha(int mes, int dia, int anio){
 }
 ~~~
 
-es euivalente a:
+es equivalente a:
 
 ~~~cpp
 Fecha::Fecha(int me, int da, int ao) : mes(me), dia(da), anio(ao) {}
@@ -258,7 +261,9 @@ Fecha::Fecha(int me, int da, int ao) : mes(me), dia(da), anio(ao) {}
 ##### Beneficios de Usar la Lista de Inicialización de Miembros
 
 - **Eficiencia**: Inicializa los miembros directamente, lo que puede ser más eficiente que asignarles valores en el cuerpo del constructor.
+
 - **Constantes y Referencias**: Permite inicializar miembros que son constantes o referencias, los cuales no pueden ser asignados en el cuerpo del constructor.
+
 - **Orden de Inicialización**: Garantiza que los miembros se inicialicen en el orden en que están declarados en la clase, no en el orden en que aparecen en la lista de inicialización.
 
 Usar la lista de inicialización de miembros es una práctica recomendada en C++ para asegurar la correcta y eficiente inicialización de los miembros de la clase.
@@ -267,8 +272,8 @@ Usar la lista de inicialización de miembros es una práctica recomendada en C++
 
 ### 1. Alcance de la clase
 
-- **Variable locales:** Como se vio, el alcance de una variable define la porción de un  programa en la cual puede haber acceso a la variable. Para variables locales, este 
-alcance es definido por cualquier bloque contenido dentro de un par de llaves, {}. 
+- **Variable locales:** Como se vio, el alcance de una variable define la porción de un  programa en la cual puede haber acceso a la variable. Para variables locales, este alcance es definido por cualquier bloque contenido dentro de un par de llaves, {}. 
+
 `Nota:` Todos los parámetros de una función se consideran como variablevs locales.
 
 - **Variables globales:** Son accesibles a través del archivo que los contiene, con tres exepciones:
@@ -278,6 +283,7 @@ alcance es definido por cualquier bloque contenido dentro de un par de llaves, {
     **b)** El alcance de una variable global puede extenderse a otro archivo usando la palabra clave **extern**,
 
     **c)** El mismo nombre global puede reutilizarse en otro archivo para definir una variable separada y distinta usando la palabra clave **static**.
+
     `Nota:` Las variables globales static son desconocidas fuera de su archivo inmediato.
 
 ~~~cpp
@@ -308,9 +314,7 @@ Visualización gráfica de los alcances en los códigos.
 
 ### 2. Miembro de clase tipo static
 
-Conforme se crea cada objeto de clase obtiene su propio bloque de 
-memoria para sus miembros de datos. En algunos casos, sin embargo, 
-es conveniente para cada instanciación de una clase compartir la misma ubicación de memoria para una variable específica.
+Conforme se crea cada objeto de clase obtiene su propio bloque de  memoria para sus miembros de datos. En algunos casos, sin embargo, es conveniente para cada instanciación de una clase compartir la misma ubicación de memoria para una variable específica.
 
 Los miembros de datos de la clase **static** comparten el mismo espacio de almacenamiento para todos los objetos de la clase; como tales, actúan como variables globales para la clase y proporcionan un medio de comunicación entre objetos.
 C++ requiere que dichas variables static **sean declaradas dentro de la sección de declaración de la clase**.
@@ -356,27 +360,16 @@ double Empleado::tasa_imp = 0.07; // con esto se define tasa_imp
 */
 ~~~
 
-Aunque podría parecer que la inicialización de tasa_imp es global, 
-no lo es. Una vez que se hace la definición, cualquier otra 
-definición producirá un error. Por tanto, la definición real de un 
-miembro static sigue siendo responsabilidad del creador de la clase.
+Aunque podría parecer que la inicialización de tasa_imp es global, no lo es. Una vez que se hace la definición, cualquier otra definición producirá un error. Por tanto, la definición real de un miembro static sigue siendo responsabilidad del creador de la clase.
 
-Además de los miembros de datos static, también pueden crearse 
-funciones miembro static. Dichas funciones se aplican a las
-clases en conjunto en lugar de a los objetos de clase individuales 
-y sólo pueden tener acceso a los miembros de datos static y otras 
-funciones miembro static de la clase
+Además de los miembros de datos static, también pueden crearse funciones miembro static. Dichas funciones se aplican a las clases en conjunto en lugar de a los objetos de clase individuales  y sólo pueden tener acceso a los miembros de datos static y otras  funciones miembro static de la clase
 
 
 ### 3. Funciones Amigas 
 
-Las funciones amigas no son miembro de las clases pero igual pueden 
-acceder a los datos protegidos, públicos y privados de dicha clase. 
+Las funciones amigas no son miembro de las clases pero igual pueden acceder a los datos protegidos, públicos y privados de dicha clase. 
 
-Las clases mantienen su propia lista aprobada de funciones no 
-miembros a las que se conceden los mismos privilegios que a las 
-funciones de una clase. Las funciones no miembros en la lista se 
-llaman **funciones amigas** y la lista se conoce como **lista de amigos**.
+Las clases mantienen su propia lista aprobada de funciones no miembros a las que se conceden los mismos privilegios que a las funciones de una clase. Las funciones no miembros en la lista se llaman **funciones amigas** y la lista se conoce como **lista de amigos**.
 
 > friend double agre_real(Complejo&, Complejo&);
 
@@ -493,14 +486,9 @@ Ejemplos de uso
 
 ## F) Herencia
 
-La herencia es la capacidad de derivar una clase a partir de otra. 
-La clase inicial usada como base para la clase derivada se conoce 
-como base, padre o superclase. La clase derivada se conoce como 
-derivada, hija o subclase. 
+La herencia es la capacidad de derivar una clase a partir de otra. La clase inicial usada como base para la clase derivada se conoce como base, padre o superclase. La clase derivada se conoce como derivada, hija o subclase. 
 
-Una clase derivada tiene la misma forma que cualquier otra clase. 
-La única diferencia está en la primera línea de la sección de 
-declaración. Para una clase derivada, esta línea se extiende:
+Una clase derivada tiene la misma forma que cualquier otra clase. La única diferencia está en la primera línea de la sección de declaración. Para una clase derivada, esta línea se extiende:
 
 > clase Nombre_Clase_derivada : tipo_accesoClase Nombre_Clase_Base
 
@@ -602,28 +590,30 @@ dependiendo del tipo **accesoClase (private, public, protected)** que correspond
 | public     ------------> : protected      ------------>  protegido                    |
 
 ```
-En el contexto de la programación orientada a objetos, 
-especialmente en C++, los términos `public`, `private` y 
-`protected` se refieren a especificadores de acceso. Estos 
-especificadores determinan la visibilidad y accesibilidad de los 
-miembros (atributos y métodos) de una clase.
+En el contexto de la programación orientada a objetos, especialmente en C++, los términos `public`, `private` y `protected` se refieren a especificadores de acceso. Estos especificadores determinan la visibilidad y accesibilidad de los miembros (atributos y métodos) de una clase.
 
 #### Public (`public`)
 
 - **Descripción**: Los miembros declarados como `public` son accesibles desde cualquier lugar del programa.
+
 - **Visibilidad**: No hay restricciones; cualquier otra clase u objeto puede acceder a estos miembros.
+
 - **Uso común**: Se utiliza para definir la interfaz pública de una clase, es decir, las funciones y atributos que están disponibles para el usuario de la clase.
 
 #### Private (`private`)
 
 - **Descripción**: Los miembros declarados como `private` solo son accesibles desde dentro de la propia clase en la que están declarados.
+
 - **Visibilidad**: Ninguna otra clase ni objeto puede acceder a estos miembros directamente, ni siquiera las clases derivadas.
+
 - **Uso común**: Se utiliza para encapsular datos y funciones que no deben ser accesibles desde fuera de la clase. Esto es fundamental para el principio de encapsulamiento en la programación orientada a objetos.
 
 #### Protected (`protected`)
 
 - **Descripción**: Los miembros declarados como `protected` son accesibles desde dentro de la propia clase y desde las clases derivadas, pero no desde otros lugares.
+
 - **Visibilidad**: Las clases derivadas pueden acceder a estos miembros, pero no los objetos ni otras clases externas.
+
 - **Uso común**: Se utiliza para permitir que las clases derivadas accedan a ciertos datos y funciones que no están destinados a ser accesibles para otros elementos del programa.
 
 #### Ejemplo de Uso en Herencia
@@ -664,13 +654,7 @@ En este ejemplo:
 En C++, el polimorfismo se refiere a la capacidad de diferentes objetos de una jerarquía de clases (o tipos) de responder a las mismas llamadas a métodos de manera diferente. Esto se logra a través de dos mecanismos principales: el polimorfismo de subtipos (o polimorfismo basado en herencia) y el polimorfismo paramétrico.
 
 ### 1. Polimorfismo de subtipos (herencia):
-   - Permite que objetos de clases derivadas se comporten como 
-   objetos de su clase base. Esto significa que una función 
-   definida en la clase base puede ser sobrescrita en las clases 
-   derivadas con su propia implementación. **Cuando se llama a esa 
-   función a través de un puntero o referencia a la clase base**, 
-   el compilador selecciona la implementación correcta basándose en 
-   el tipo real del objeto en tiempo de ejecución.
+   - Permite que objetos de clases derivadas se comporten como objetos de su clase base. Esto significa que una función definida en la clase base puede ser sobrescrita en las clases derivadas con su propia implementación. **Cuando se llama a esa función a través de un puntero o referencia a la clase base**, el compilador selecciona la implementación correcta basándose en el tipo real del objeto en tiempo de ejecución.
    
    - Ejemplo:
      ```cpp
@@ -708,18 +692,11 @@ En C++, el polimorfismo se refiere a la capacidad de diferentes objetos de una j
          return 0;
      }
      ```
-   - En este ejemplo, `Animal` es la clase base con un método 
-   virtual `hacerSonido()`, y `Perro` y `Gato` son clases derivadas 
-   que sobrescriben este método. Cuando se llama a `hacerSonido()` 
-   a través de punteros `Animal`, la implementación específica de 
-   cada clase derivada es utilizada.
+   - En este ejemplo, `Animal` es la clase base con un método  virtual `hacerSonido()`, y `Perro` y `Gato` son clases derivadas que sobrescriben este método. Cuando se llama a `hacerSonido()` a través de punteros `Animal`, la implementación específica de cada clase derivada es utilizada.
 
 ### 2. Polimorfismo paramétrico:
    
-   - Es implementado mediante plantillas (templates) en C++. 
-   Permite escribir código que actúa de manera genérica sobre 
-   diferentes tipos de datos, sin saber de antemano qué tipo se va 
-   a utilizar. Esto se logra utilizando parámetros de plantilla.
+   - Es implementado mediante plantillas (templates) en C++. Permite escribir código que actúa de manera genérica sobre diferentes tipos de datos, sin saber de antemano qué tipo se va a utilizar. Esto se logra utilizando parámetros de plantilla.
    
    - Ejemplo:
    
@@ -737,11 +714,6 @@ En C++, el polimorfismo se refiere a la capacidad de diferentes objetos de una j
      }
      ```
    
-   - En este caso, la función `suma` es paramétrica y puede ser 
-   utilizada con diferentes tipos (`int`, `double`, etc.) sin 
-   necesidad de definir versiones separadas para cada tipo.
+   - En este caso, la función `suma` es paramétrica y puede ser utilizada con diferentes tipos (`int`, `double`, etc.) sin necesidad de definir versiones separadas para cada tipo.
 
-El polimorfismo en C++ es una característica fundamental que 
-permite escribir código más flexible y reusable, haciendo que los 
-programas puedan manejar objetos de diferentes tipos de manera más 
-eficiente y elegante.
+El polimorfismo en C++ es una característica fundamental que permite escribir código más flexible y reusable, haciendo que los programas puedan manejar objetos de diferentes tipos de manera más eficiente y elegante.
