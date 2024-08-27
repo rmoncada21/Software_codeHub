@@ -16,3 +16,5 @@ bin/
 *.sh
 .vscode/
 test.*
+git_add.txt 
+
