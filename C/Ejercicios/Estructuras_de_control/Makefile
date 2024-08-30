@@ -1,29 +1,27 @@
-# target: prerrequisites 
-# comando to build target
-
-# construir el siguiente comando de C 
-# gcc -Wall -Wextra archivo.c -o ejecutable -librerias
-
-GCC=gcc
-FLGAS=-Wall -Wxtra
+# taget: prerrequisites
+#	command to build prerrequisites
 APP=
 CODE=$(patsubst %.c,%,$(APP))
+COMPILER=gcc
+FLAGS=-Wall -Wextra
 OUTPUT=-o
+BIN_FOLDER=bin
 LIBRARIES=
-BIN=bin
-SRC=
 
+# construir el comando de compilación
+# gcc -Wall -Wextra -o bin/nombre_ejecutable nombre_archivo.c -librerias
 
-all: code
+all: code run
 
+# regla de compilación individual
 code:
-	$(GCC) $(FLAGS) $(OUTPUT) $(BIN)/$(CODE) $(CODE).c $(LIBRARIES)
-
-run:
-	mkdir -p bin
-	./$(BIN)/$(CODE)
+	mkdir -p $(BIN_FOLDER)
+	$(COMPILER) $(FLAGS) $(OUTPUT) $(BIN_FOLDER)/$(CODE) $(APP) $(LIBRARIES)
 
 clean:
-	rm -rf $(BIN)/*
+	rm -rf $(BIN_FOLDER)/*
 
-.PHNOY: all code run
+run:
+	./$(BIN_FOLDER)/$(CODE)
+
+.PHONY: all code clean run
