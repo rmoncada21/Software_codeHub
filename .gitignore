@@ -1,6 +1,29 @@
+<<<<<<< HEAD
 *.o
 folder_test/
 Replicador_entrada_std
 *.pdf
 *.sh
 bin/
+=======
+'*.o'
+'*.out'
+'*.ii'
+
+*.o
+*.ko
+*.obj
+*.elf
+
+test.*
+*.pdf
+#estructuras
+*.gcc
+*.cc
+bin/
+*.sh
+.vscode/
+test.*
+git_add.txt 
+
+>>>>>>> ProgramacionC_Cpp_ATS_Libro/main
