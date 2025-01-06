@@ -4,3 +4,5 @@ Replicador_entrada_std
 *.pdf
 *.sh
 bin/
+test/
+*test*
