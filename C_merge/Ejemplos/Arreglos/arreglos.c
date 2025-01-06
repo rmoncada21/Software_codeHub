@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-void main(){
+int main(){
     // char caracter;
     // scanf("%s", &caracter);
     // printf("%c\n", caracter);
@@ -14,6 +14,6 @@ void main(){
     // printf("%c\n", *(cadena2+2));
 
     long arreglo[] = {16,32,64};
-    printf("\nDireccion del primer elemento: %p \tValor: %d\n", arreglo, *(arreglo+1));
+    printf("\nDireccion del primer elemento: %p \tValor: %ld \n", arreglo, *(arreglo+1));
 
 }
