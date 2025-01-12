@@ -65,7 +65,7 @@ int find_min(int* arreglo, int size){
 
 void sort(int* arreglo, int size){
     int temporal=0;
-    int swap;
+    int swap=0;
     
     while(swap){
         swap=0;
