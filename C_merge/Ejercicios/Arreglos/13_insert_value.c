@@ -59,7 +59,7 @@ int* add_value(int* arreglo, int size, int new_space){
         scanf("%i", &valor);
         *(nuevo_arreglo+size+i)=valor;
     }
-    
+   
     // sort_array(nuevo_arreglo, new_size);
     return nuevo_arreglo;
 }

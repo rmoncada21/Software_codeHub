@@ -6,10 +6,11 @@ DEBUG=-g
 FLAGS=-Wall -Wextra
 APP?=main.c # Valor por defecto si no se especifica
 CODE=$(patsubst %.c,%,$(APP))
-TEST_INPUT?=test.txt
+TEST_INPUT=
 OUTPUT=-o
 LIBRARIES=
 # Directorios
+TEST_FOLDER=test
 BIN_FOLDER=bin
 SRC_FOLDER=src
 
@@ -19,7 +20,8 @@ SRC_FOLDER=src
 all: code run
 
 code: $(APP)
-	mkdir -p bin
+	mkdir -p $(BIN_FOLDER)
+	mkdir -p $(TEST_FOLDER)
 	$(GCC) $(DEBUG) $(FLAGS) $(APP) $(OUTPUT) $(BIN_FOLDER)/$(CODE) $(LIBRARIES)
 	
 # usando código bash dentro del makefile
@@ -38,7 +40,7 @@ ifeq ($(strip $(TEST_INPUT)),)  # Si TEST_INPUT está vacío
 	./$(BIN_FOLDER)/$(CODE)
 else                           # Si TEST_INPUT no está vacío
 	@echo "Ejecutando con entrada desde $(TEST_INPUT)"
-	./$(BIN_FOLDER)/$(CODE) < $(TEST_INPUT)
+	./$(BIN_FOLDER)/$(CODE) < $(TEST_FOLDER)/$(TEST_INPUT)
 endif
 
 clean:
