@@ -16,3 +16,5 @@
 ![alt text](img/fifo_simple2.png) -->
 
 # 8. Create a structure named Complex to represent a complex number with real and imaginary parts. Write a C program to add and multiply two complex numbers.
+
+# 9. Design a structure named "Car" to store details like car ID, model, and rental rate per day. Write a C program to input data for three cars, calculate the total rental cost for a specified number of days, and display the results.
