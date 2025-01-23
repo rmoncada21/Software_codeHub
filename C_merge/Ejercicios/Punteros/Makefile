@@ -34,10 +34,59 @@ CFILES=$(CSOURCES) $(CHEADERS)
 BIN_FOLDER=bin
 SRC_FOLDER=src
 TEST_FOLDER=test
+TEST_FILES=$(wildcard $(TEST_FOLDER)/*.txt)
+TEST_INPUT=$(notdir $(TEST_FILES))
 
 # Ejecutables
 EXE_CSOURCES_FILES=$(wildcard $(BIN_FOLDER)/*)
-EXE_CSOURCES=$(patsubst $(BIN_FOLDER)/%,%,$(EXE_CSOURCES_FILES))
+EXE_CSOURCES=$(notdir $(EXE_CSOURCES_FILES))
+# EXE_CSOURCES=$(patsubst $(BIN_FOLDER)/%,%, $(EXE_CSOURCES_FILES))
+
+
+# -------------------------------------------------------------------
+# Código ansi de colores
+# -------------------------------------------------------------------
+
+# Colores básicos:
+RESET = \033[0m
+NEGRO = \033[30m
+ROJO = \033[31m
+VERDE = \033[32m
+AMARILLO = \033[33m
+AZUL = \033[34m
+MAGENTA = \033[35m
+CIAN = \033[36m
+BLANCO = \033[37m
+
+# Colores brillantes (intensos):
+NEGRO_BRILLANTE = \033[90m
+ROJO_BRILLANTE = \033[91m
+VERDE_BRILLANTE = \033[92m
+AMARILLO_BRILLANTE = \033[93m
+AZUL_BRILLANTE = \033[94m
+MAGENTA_BRILLANTE = \033[95m
+CIAN_BRILLANTE = \033[96m
+BLANCO_BRILLANTE = \033[97m
+
+# Fondo de colores:
+NEGRO_FONDO = \033[40m
+ROJO_FONDO = \033[41m
+VERDE_FONDO = \033[42m
+AMARILLO_FONDO = \033[43m
+AZUL_FONDO = \033[44m
+MAGENTA_FONDO = \033[45m
+CIAN_FONDO = \033[46m
+BLANCO_FONDO = \033[47m
+
+# Fondos brillantes:
+NEGRO_BRILLANTE_FONDO = \033[100m
+ROJO_BRILLANTE_FONDO = \033[101m
+VERDE_BRILLANTE_FONDO = \033[102m
+AMARILLO_BRILLANTE_FONDO = \033[103m
+AZUL_BRILLANTE_FONDO = \033[104m
+MAGENTA_BRILLANTE_FONDO = \033[105m
+CIAN_BRILLANTE_FONDO = \033[106m
+BLANCO_BRILLANTE_FONDO = \033[107m
 
 
 # -------------------------------------------------------------------
@@ -55,57 +104,67 @@ mkdir:
 
 # Regla para comprobar sintaxis de todos los archivos
 syntax:
-	@echo "make $@"
-	$(GCC) $(CFLAGS) $(CSYNTAX) $(CFILES)
+	@echo -e "$(AZUL_FONDO)make $@$(RESET)"
+	@echo -e "$(GCC) $(CFLAGS) $(CIAN_FONDO)$(CSYNTAX)$(RESET) $(VERDE_BRILLANTE)$(CFILES)$(RESET) \n"
+	@$(GCC) $(CFLAGS) $(CSYNTAX) $(CFILES)
 
 
 # Regla para comprobar sintaxis de un archivo
 $(CFILES:=_syntax):
-	@echo 'make $$(CFILES:=_syntax)'
-	@echo -e "make $@\n"
-	$(GCC) $(CFLAGS) $(CSYNTAX) $(@:_syntax=)
+	@echo -e '$(AZUL_FONDO)make $$(CFILES:=_syntax)$(RESET)'
+	@echo -e "$(AZUL_BRILLANTE)make $@$(RESET)"
+	@echo -e "$(GCC) $(CFLAGS) $(CIAN_FONDO)$(CSYNTAX)$(RESET) $(VERDE_BRILLANTE)$(@:_syntax=)$(RESET)\n"
+	@$(GCC) $(CFLAGS) $(CSYNTAX) $(@:_syntax=)
 
 
 # Regla para compilar un main.c con archivos #include <archivo.h>
 csource:
-	@echo -e "make $@\n"
-	$(GCC) $(CFLAGS) $(CSOURCES) -o $(BIN_FOLDER)/$(APP:.c=)
+	@echo -e "$(AZUL_FONDO)make $@$(RESET)"
+	@echo -e "$(GCC) $(CFLAGS) $(VERDE_BRILLANTE)$(CSOURCES)$(RESET) -o $(BIN_FOLDER)/$(ROJO_BRILLANTE)$(APP:.c=)$(RESET)\n"
+	@$(GCC) $(CFLAGS) $(CSOURCES) -o $(BIN_FOLDER)/$(APP:.c=)
+	
 
-
-# Regla para compilar un archivo.c con función main
+# Regla para compilar un archivo.c con función int main(){}
 $(CSOURCES):
-	@echo 'make $$(CSOURCES)'
-	@echo -e "make $@\n"
-	$(GCC) $(CFLAGS) $@ -o $(BIN_FOLDER)/$(@:.c=)
+	@echo -e '$(AZUL_FONDO)make $$(CSOURCES)$(RESET)'
+	@echo -e "$(AZUL_BRILLANTE)make $@$(RESET)"
+	@echo -e "$(GCC) $(CFLAGS) $(VERDE_BRILLANTE)$@$(RESET) -o $(BIN_FOLDER)/$(ROJO_BRILLANTE)$(@:.c=)$(RESET)\n"
+	@$(GCC) $(CFLAGS) $@ -o $(BIN_FOLDER)/$(@:.c=)
 
 
 # Regla para ejecutables con int main(int argv, char* [])
-lectura:
+_lectura:
+	@echo -e '$(AZUL_FONDO)$$(EXE_CSOURCES:=_arg)$(RESET)'
 	@echo "Ingrese los datos del test:"
 
-$(EXE_CSOURCES:=_arg): lectura
+$(EXE_CSOURCES:=_arg): _lectura
 	$(eval MATRIZ := $(shell read -a matriz; echo $${matriz[@]}))
 # @echo "La matriz desde Makefile es: $(MATRIZ)"
 # Aquí, ejecutamos la acción con la matriz capturada
-	./$(BIN_FOLDER)/$(@:_arg=) $(MATRIZ)
+	@echo -e "$(AZUL_BRILLANTE)make $@$(RESET)"
+	@echo -e "./$(BIN_FOLDER)/$(ROJO_BRILLANTE)$(@:_arg=) $(MATRIZ)$(RESET)\n"
+	@./$(BIN_FOLDER)/$(@:_arg=) $(MATRIZ)
+
 
 # Regla para ejecutables con archivo de entrada o sin archivo
 $(EXE_CSOURCES):
-ifeq ($(strip $(TEST_INPUT)),)
-	@echo 'make $$(EXE_CSOURCES)'
-	@echo -e "make $@\n"
-	./$(BIN_FOLDER)/$@
-else
-	@echo 'make $$(EXE_CSOURCES)'
-	@echo -e "make $@ < $(TEST_INPUT)\n"
-	./$(BIN_FOLDER)/$@ < $(TEST_INPUT)
-endif
+	@if [ "$(words $(MAKECMDGOALS))" -eq 1 ]; then \
+		echo -e "$(AZUL_BRILLANTE)Ejecutando $(BIN_FOLDER)/$@$(RESET) $(VERDE_BRILLANTE)sin entrada...$(RESET)\n"; \
+		./$(BIN_FOLDER)/$@; \
+	elif [ "$(words $(MAKECMDGOALS))" -eq 2 ]; then \
+		TEST_INPUT=$(word 2, $(MAKECMDGOALS)); \
+		echo -e "$(AZUL_BRILLANTE)Ejecutando $(BIN_FOLDER)/$@$(RESET) < $(VERDE_BRILLANTE) $(TEST_FOLDER)/$$TEST_INPUT$(RESET)\n"; \
+		./$(BIN_FOLDER)/$@ < $(TEST_FOLDER)/$$TEST_INPUT; \
+	else \
+		echo -e "$(ROJO_BRILLANTE)Error: demasiados argumentos. Uso: make <ejecutable> [<archivo_entrada>]$(RESET)"; \
+	fi
 
 
 # Regla para limpiar archivos ejecutables
 clean:
-	@echo "make clean -> limpiando ejecutables"
-	rm -rf $(BIN_FOLDER)/*
+	@echo -e "$(AZUL_FONDO)make clean$(RESET) -> $(AZUL_BRILLANTE)limpiando ejecutables$(RESET)"
+	@echo -e "rm -rf $(BIN_FOLDER)/$(ROJO_BRILLANTE)*$(RESET)"
+	@echo -e "rm -rf $(BIN_FOLDER)/*
 
 
 # Regla para mostrar contenidos de la variables
@@ -133,6 +192,8 @@ mostrar_archivos:
 	@echo "$(SRC_FOLDER)"
 	@echo -e "\nDirectorio TEST_FOLDER:"
 	@echo "$(TEST_FOLDER)"
+	@echo -e "\nArchivos TEST_INPUT:"
+	@echo "$(TEST_INPUT)"
 	@echo -e "\nArchivos ejecutables en BIN_FOLDER (EXE_CSOURCES_FILES):"
 	@echo "$(EXE_CSOURCES_FILES)"
 	@echo -e "\nNombres de ejecutables (EXE_CSOURCES):"
@@ -157,6 +218,6 @@ help:
 # -------------------------------------------------------------------
 # Declaraciones .PHONY
 # -------------------------------------------------------------------
-.PHONY: all mkdir syntax $(CFILES:=_syntax) source\
-		$(CSOURCES) $(EXE_CSOURCES) clean\
-		mostrar_archivos lectura help\
+.PHONY: all test_colores mkdir syntax $(CFILES:=_syntax) source \
+		$(CSOURCES) $(EXE_CSOURCES) clean \
+		mostrar_archivos lectura help \
