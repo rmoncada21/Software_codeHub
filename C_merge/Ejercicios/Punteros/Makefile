@@ -120,7 +120,7 @@ $(CFILES:=_syntax):
 # Regla para compilar un main.c con archivos #include <archivo.h>
 csource:
 	@echo -e "$(AZUL_FONDO)make $@$(RESET)"
-	@echo -e "$(GCC) $(CFLAGS) $(VERDE_BRILLANTE)$(CSOURCES)$(RESET) -o $(BIN_FOLDER)/$(ROJO_BRILLANTE)$(APP:.c=)$(RESET)\n"
+	@echo -e "$(GCC) $(CFLAGS) $(VERDE_BRILLANTE)$(CSOURCES)$(RESET) -o $(BIN_FOLDER)/$(CIAN_BRILLANTE)$(APP:.c=)$(RESET)\n"
 	@$(GCC) $(CFLAGS) $(CSOURCES) -o $(BIN_FOLDER)/$(APP:.c=)
 	
 
@@ -128,21 +128,21 @@ csource:
 $(CSOURCES):
 	@echo -e '$(AZUL_FONDO)make $$(CSOURCES)$(RESET)'
 	@echo -e "$(AZUL_BRILLANTE)make $@$(RESET)"
-	@echo -e "$(GCC) $(CFLAGS) $(VERDE_BRILLANTE)$@$(RESET) -o $(BIN_FOLDER)/$(ROJO_BRILLANTE)$(@:.c=)$(RESET)\n"
+	@echo -e "$(GCC) $(CFLAGS) $(VERDE_BRILLANTE)$@$(RESET) -o $(BIN_FOLDER)/$(CIAN_BRILLANTE)$(@:.c=)$(RESET)\n"
 	@$(GCC) $(CFLAGS) $@ -o $(BIN_FOLDER)/$(@:.c=)
 
 
 # Regla para ejecutables con int main(int argv, char* [])
 _lectura:
 	@echo -e '$(AZUL_FONDO)$$(EXE_CSOURCES:=_arg)$(RESET)'
-	@echo "Ingrese los datos del test:"
+	@echo -n "Ingrese los datos del test: "
 
 $(EXE_CSOURCES:=_arg): _lectura
 	$(eval MATRIZ := $(shell read -a matriz; echo $${matriz[@]}))
 # @echo "La matriz desde Makefile es: $(MATRIZ)"
 # Aquí, ejecutamos la acción con la matriz capturada
-	@echo -e "$(AZUL_BRILLANTE)make $@$(RESET)"
-	@echo -e "./$(BIN_FOLDER)/$(ROJO_BRILLANTE)$(@:_arg=) $(MATRIZ)$(RESET)\n"
+	@echo -e "\n$(AZUL_BRILLANTE)make $@$(RESET)"
+	@echo -e "./$(BIN_FOLDER)/$(CIAN_BRILLANTE)$(@:_arg=) $(MATRIZ)$(RESET)\n"
 	@./$(BIN_FOLDER)/$(@:_arg=) $(MATRIZ)
 
 
@@ -156,14 +156,14 @@ $(EXE_CSOURCES):
 		echo -e "$(AZUL_BRILLANTE)Ejecutando $(BIN_FOLDER)/$@$(RESET) < $(VERDE_BRILLANTE) $(TEST_FOLDER)/$$TEST_INPUT$(RESET)\n"; \
 		./$(BIN_FOLDER)/$@ < $(TEST_FOLDER)/$$TEST_INPUT; \
 	else \
-		echo -e "$(ROJO_BRILLANTE)Error: demasiados argumentos. Uso: make <ejecutable> [<archivo_entrada>]$(RESET)"; \
+		echo -e "$(CIAN_BRILLANTE)Error: demasiados argumentos. Uso: make <ejecutable> [<archivo_entrada>]$(RESET)"; \
 	fi
 
 
 # Regla para limpiar archivos ejecutables
 clean:
 	@echo -e "$(AZUL_FONDO)make clean$(RESET) -> $(AZUL_BRILLANTE)limpiando ejecutables$(RESET)"
-	@echo -e "rm -rf $(BIN_FOLDER)/$(ROJO_BRILLANTE)*$(RESET)"
+	@echo -e "rm -rf $(BIN_FOLDER)/$(ROJO_BRILLANTE_FONDO)*$(RESET)"
 	@echo -e "rm -rf $(BIN_FOLDER)/*
 
 

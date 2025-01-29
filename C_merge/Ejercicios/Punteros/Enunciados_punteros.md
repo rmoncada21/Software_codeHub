@@ -63,3 +63,11 @@ Input the value of 1st element : 5
 Input the value of 2nd element : 6
 Input the value of 3rd element : 7
 Expected Output :
+
+# 13. Write a program in C to count the number of vowels and consonants in a string using a pointer.
+Test Data :
+Input a string: string
+Expected Output :
+
+Number of vowels : 1
+Number of constant : 5
