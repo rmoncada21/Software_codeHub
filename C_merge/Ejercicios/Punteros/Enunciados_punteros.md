@@ -97,3 +97,8 @@ Expected Output :
  element - 3 : 4     
  element - 2 : 3
  element - 1 : 2  
+
+ # 19. Write a program in C to show a pointer to a union.
+Expected Output :
+
+Jhon Mc Jhon Mc
