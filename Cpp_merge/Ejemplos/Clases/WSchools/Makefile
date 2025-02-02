@@ -164,7 +164,7 @@ $(EXE_CPPSOURCES):
 clean:
 	@echo -e "$(AZUL_FONDO)make clean$(RESET) -> $(AZUL_BRILLANTE)limpiando ejecutables$(RESET)"
 	@echo -e "rm -rf $(BIN_FOLDER)/$(ROJO_BRILLANTE_FONDO)*$(RESET)"
-	@echo -e "rm -rf $(BIN_FOLDER)/*"
+	@rm -rf $(BIN_FOLDER)/
 
 
 # Regla para mostrar contenidos de la variables
