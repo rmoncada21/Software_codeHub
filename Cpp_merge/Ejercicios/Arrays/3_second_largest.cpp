@@ -2,8 +2,9 @@
 
 using namespace std;
 
-int* char_array_to_int(char** charreglo, int* iarreglo, int size){
-    
+int* char_array_to_int(char** charreglo, int size){
+    int* iarreglo = new int[size];
+
     for(int i=0; i<size; i++){
         iarreglo[i]=atoi(charreglo[i+1]);
     }
@@ -57,7 +58,7 @@ int main(int argc, char* argv[]){
     int arreglo_size=argc-1;
     int* iarreglo = new int[arreglo_size];
 
-    iarreglo=char_array_to_int(argv, iarreglo, arreglo_size);
+    iarreglo=char_array_to_int(argv, arreglo_size);
     mostrar_arreglo(iarreglo, arreglo_size);
 
     cout << "Second_largest: " << n_largest(iarreglo, arreglo_size, 2) << endl;
