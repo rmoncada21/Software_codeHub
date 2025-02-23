@@ -4,5 +4,6 @@
 
 # 2. Write a C++ program to dynamically allocate an array of integers and strings and initialize its elements.2. 
 
-# 4. Write a C++ program to dynamically allocate memory for a character and a string. Input a character and a string from the user.
+# 3. Write a C++ program to dynamically allocate memory for a character and a string. Input a character and a string from the user.
 
+# 5. Write a C++ program to dynamically create an object of a class using the new operator.
