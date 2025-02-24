@@ -2,6 +2,13 @@
 
 using namespace std;
 
+/*
+(Declaración de un objeto en la pila)
+Aquí, nueva_clase es un objeto de la clase Clase, creado en la pila (stack). 
+No es un puntero ni necesita new. Cuando la función o el ámbito donde se declaró 
+termine, el objeto se destruirá automáticamente.
+*/
+
 class Clase{
     public:
         string nombre_clase;
@@ -21,8 +28,9 @@ void Clase::set_class_name(string name){
 }
 
 int main(int argc, char* argv[]){
-    int* entero = new int();
-    Clase* miClase = new Clase();
+    Clase miClase0; // Se crea en la pila
+    Clase* miClase = new Clase(); // Se crea en el heap
 
+    delete miClase;
     return 0;
 }
