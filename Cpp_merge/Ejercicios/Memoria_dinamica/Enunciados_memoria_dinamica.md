@@ -9,3 +9,5 @@
 # 5. Write a C++ program to dynamically create an object of a class using the new operator.
 
 # 6. Write a C++ program to dynamically create an array of objects using the new operator.
+
+# 7. Write a C++ program to dynamically allocate memory for a structure and input its members from the user.
