@@ -11,3 +11,9 @@
 # 6. Write a C++ program to dynamically create an array of objects using the new operator.
 
 # 7. Write a C++ program to dynamically allocate memory for a structure and input its members from the user.
+
+<!-- # 8. Write a C++ program to dynamically allocate memory for a linked list and perform basic operations like insert and delete node(s).
+
+# 9. Write a C++ program to dynamically allocate memory for a stack data structure. Implement push and pop operations on this stack.
+
+# 10. Write a C++ program to dynamically allocate memory for a queue data structure. Implement enqueue and dequeue operations on this queue. -->

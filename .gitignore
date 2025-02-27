@@ -6,3 +6,4 @@ Replicador_entrada_std
 bin/
 test/
 *test*
+*.out
