@@ -9,10 +9,10 @@
 # 3. Write a C++ program to create a class called Person that has private member variables for name, age and country. Implement member functions to set and get the values of these variables.
 
 
-<!-- # 4. Write a C++ program to create a class called Car that has private member variables for company, model, and year. Implement member functions to get and set these variables.
+# 4. Write a C++ program to create a class called Car that has private member variables for company, model, and year. Implement member functions to get and set these variables.
 
 
-# 5. Write a C++ program to implement a class called BankAccount that has private member variables for account number and balance. Include member functions to deposit and withdraw money from the account.
+<!-- # 5. Write a C++ program to implement a class called BankAccount that has private member variables for account number and balance. Include member functions to deposit and withdraw money from the account.
 
 
 # 6. Write a C++ program to create a class called Triangle that has private member variables for the lengths of its three sides. Implement member functions to determine if the triangle is equilateral, isosceles, or scalene.
