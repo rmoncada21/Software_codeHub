@@ -1,5 +1,5 @@
-# ProgramacionC_Cpp
-Ejercicios, ejemplos y práctica en lenguaje C y C++
+# Software_codeHub
+Ejercicios, ejemplos y práctica en lenguaje C, C++, Python...
 
 Estructura común de un proyecto de software
 ~~~
