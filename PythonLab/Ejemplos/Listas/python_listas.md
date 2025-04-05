@@ -1,9 +1,11 @@
-# Python: Listas
+# 🐍  Python: Listas (estructuras mutables)
 
 Una **lista** es una estructura de datos que permite **almacenar una colección ordenada y modificable** de elementos. Los elementos pueden ser de **cualquier tipo** (números, cadenas, otras listas, etc.).
 
 📌 **Sintaxis básica:**
 ```python
+mi_lista = list()
+mi_lista = []
 mi_lista = [1, "hola", 3.14, True]
 ```
 
