@@ -1,6 +1,6 @@
-[submodule "C_Cpp_algorithms_and_dataStructures"]
-	path = C_Cpp_algorithms_and_dataStructures
+[submodule "c_cpp_algorithms_and_dataStructures"]
+	path = c_cpp_algorithms_and_dataStructures
 	url = git@rmoncada21.github.com:rmoncada21/C_Cpp_algorithms_and_dataStructures.git
-[submodule "Shebang_scripts"]
-	path = Shebang_scripts
+[submodule "shebang_scripts"]
+	path = shebang_scripts
 	url = git@rmoncada21.github.com:rmoncada21/Shebang_scripts.git
