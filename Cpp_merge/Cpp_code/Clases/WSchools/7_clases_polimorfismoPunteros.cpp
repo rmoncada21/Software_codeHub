@@ -1,47 +1,38 @@
 #include <iostream>
 
 // Clase base
-class Animal {
+class ComponenteElectronico {
 public:
-    virtual void hacerSonido() { // Método virtual
-        std::cout << "Sonido de animal" << std::endl;
+    virtual void verificar() {   // Método virtual
+        std::cout << "Verificación genérica del componente electrónico" << std::endl;
     }
 };
 
 // Clase derivada 1
-class Perro : public Animal {
+class Resistor : public ComponenteElectronico {
 public:
-    void hacerSonido() override { // Sobreescribe el método de la clase base
-        std::cout << "Guau Guau" << std::endl;
+    void verificar() override {  // Sobreescribe el método de la clase base
+        std::cout << "Resistor verificado: valor de resistencia correcto" << std::endl;
     }
 };
 
 // Clase derivada 2
-class Gato : public Animal {
+class Capacitor : public ComponenteElectronico {
 public:
-    void hacerSonido() override { // Sobreescribe el método de la clase base
-        std::cout << "Miau Miau" << std::endl;
+    void verificar() override {  // Sobreescribe el método de la clase base
+        std::cout << "Capacitor verificado: capacitancia dentro de tolerancia" << std::endl;
     }
 };
 
 int main() {
-    Animal* a1 = new Perro(); // Puntero de tipo base apuntando a objeto Perro
-    Animal* a2 = new Gato();  // Puntero de tipo base apuntando a objeto Gato
+    ComponenteElectronico* c1 = new Resistor();   // Puntero base → objeto Resistor
+    ComponenteElectronico* c2 = new Capacitor();  // Puntero base → objeto Capacitor
     
-    a1->hacerSonido();  // Llama a Perro::hacerSonido()
-    a2->hacerSonido();  // Llama a Gato::hacerSonido()
+    c1->verificar();  // Llama a Resistor::verificar()
+    c2->verificar();  // Llama a Capacitor::verificar()
 
-    delete a1;
-    delete a2;
-    
-    // Animal perro;
-    // Animal gato;
-
-    // Perro perro;
-    // Gato gato;
-
-    // perro.hacerSonido();
-    // gato.hacerSonido();
+    delete c1;
+    delete c2;
 
     return 0;
 }
