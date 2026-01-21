@@ -2,37 +2,38 @@
 
 using namespace std;
 
-// Base class
-class Animal {
-  public:
-    void animalSound() {
-      cout << "The animal makes a sound \n";
+// Clase base
+class Component {
+public:
+    void checkStatus() {
+        cout << "El componente del circuito está siendo verificado." << endl;
     }
 };
 
-// Derived class
-class Pig : public Animal {
-  public:
-    void animalSound() {
-      cout << "The pig says: wee wee \n";
+// Clase derivada
+class Resistor : public Component {
+public:
+    void checkStatus() {
+        cout << "El resistor cumple con el valor esperado." << endl;
     }
 };
 
-// Derived class
-class Dog : public Animal {
-  public:
-    void animalSound() {
-      cout << "The dog says: bow wow \n";
+// Clase derivada
+class Capacitor : public Component {
+public:
+    void checkStatus() {
+        cout << "El capacitor cumple con la capacitancia esperada." << endl;
     }
 };
 
 int main() {
-  Animal myAnimal;
-  Pig myPig;
-  Dog myDog;
+    Component genericComponent;
+    Resistor r1;
+    Capacitor c1;
 
-  myAnimal.animalSound();
-  myPig.animalSound();
-  myDog.animalSound();
-  return 0;
+    genericComponent.checkStatus();
+    r1.checkStatus();
+    c1.checkStatus();
+
+    return 0;
 }
