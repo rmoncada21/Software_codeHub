@@ -1,0 +1,20 @@
+# Convención de commits — Software_codeHub
+# Formato: <prefijo>: <mensaje breve>
+
+# Prefijos principales:
+# - C              → Cambios en la carpeta C_merge/
+# - C++            → Cambios en la carpeta Cpp_merge/
+# - Python         → Cambios en la carpeta Python_merge/
+# - Submodule      → Cambios en submódulos
+# - Repo           → Cambios en archivos base (.gitignore, README.md, Makefile, scripts, etc.)
+
+# EJEMPLOS:
+# C++ - STL/folder: prueba de métodos de vector<>
+# Submodule - shebang_scripts: update - sincronizar con la última versión remota
+# Repo: agregar reglas de gitignore para archivos temporales
+
+# Archivos modificados (opcional)
+# EJEMPLO:
+# Nuevos archivos:
+# - C++/makefile
+# - C/Arreglos/arreglos.c
