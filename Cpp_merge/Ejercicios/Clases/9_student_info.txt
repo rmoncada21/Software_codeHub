@@ -1,0 +1,74 @@
+Estudiante Ana_Lopez
+Carrera Mecatronica
+Calculo 95
+Programacion 98
+Algebra 92
+Electronica 90
+Taller 94
+
+Estudiante Carlos_Perez
+Carrera Ingenieria_Civil
+Calculo 85
+Fisica 88
+Resistencia 82A
+Dibujo_Tecnico 90
+
+Estudiante Maria_Gomez
+Carrera Medicina
+Anatomia 91
+Biologia 89
+Quimica 93
+Histologia 87
+Fisiologia 90
+Bioetica 95
+
+Estudiante Luis_Torres
+Carrera Administracion
+Contabilidad 78
+Economia 84
+Estadistica 80
+Marketing 88
+
+Estudiante Sofia_Ramirez
+Carrera Arquitectura
+Diseno 94
+Historia_Arte 90
+Geometria 86
+Construccion 88
+Expresion_Grafica 92
+
+Estudiante Diego_Fernandez
+Carrera Sistemas
+Programacion 96
+Estructuras_Datos 91
+Base_Datos 89
+Redes 90
+Sistemas_Operativos 88
+
+Estudiante Valeria_Sanchez
+Carrera Psicologia
+Psicologia_General 92
+Neuropsicologia 90
+Estadistica_Aplicada 85
+
+Estudiante Andres_Morales
+Carrera Derecho
+Derecho_Civil 88
+Derecho_Penal 84
+Derecho_Constitucional 91
+Filosofia_Derecho 89
+
+Estudiante Camila_Herrera
+Carrera Diseno_Grafico
+Fundamentos_Diseno 95
+Ilustracion 97
+Tipografia 90
+Animacion 93
+
+Estudiante Jorge_Castillo
+Carrera Ingenieria_Industrial
+Calculo_II 83
+Investigacion_Operaciones 88
+Gestion_Calidad 91
+Procesos_Industriales 86
+Logistica 84
